@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Participant {
+public class Registration {
     static  String command;
     
     public void register() throws IOException {

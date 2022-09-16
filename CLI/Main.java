@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String command;
         Scanner s = new Scanner(System.in);
-        Participant r = new Participant();
+        Registration r = new Registration();
         Post p = new Post();
         command=s.nextLine();
         do{
