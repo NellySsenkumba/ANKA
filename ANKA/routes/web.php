@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/Customer',  [CustomerController::class, 'index']);
+Route::get('/Customer/participants',  [CustomerController::class, 'participants']);
+Route::get('/Customer/test',  [CustomerController::class, 'test']);
