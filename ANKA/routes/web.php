@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Customer',  [CustomerController::class, 'index']);
+Route::get('/Customer/products',  [CustomerController::class, 'index']);
 Route::get('/Customer/participants',  [CustomerController::class, 'participants']);
 Route::get('/Admin',  [AdminController::class, 'index']);
 

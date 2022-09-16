@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/assets/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="/assets/vendors/owl-carousel-2/owl.carousel.min.css">
     <link rel="stylesheet" href="/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
-    
+
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -30,15 +30,15 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-                <a class="sidebar-brand brand-logo" href="/Customer"><img src="/assets/images/logo.svg"
+                <a class="sidebar-brand brand-logo" href="/Customer"><img src="/assets/images/logo.png"
                         alt="logo" /></a>
-                <a class="sidebar-brand brand-logo-mini" href="/Customer"><img src="/assets/images/logo-mini.svg"
+                <a class="sidebar-brand brand-logo-mini" href="/Customer"><img src="/assets/images/logo-mini.png"
                         alt="logo" /></a>
             </div>
             <ul class="nav">
-                
+
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="/Customer">
+                    <a class="nav-link" href="/Customer/products">
                         <span class="menu-icon">
                             <i class="mdi mdi-speedometer"></i>
                         </span>
@@ -61,7 +61,7 @@
             <!-- partial:partials/_navbar.html -->
             <nav class="navbar p-0 fixed-top d-flex flex-row">
                 <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/assets/images/logo-mini.svg"
+                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/assets/images/logo-mini.png"
                             alt="logo" /></a>
                 </div>
                 <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
@@ -174,17 +174,18 @@
 
 
 
-            <footer class="footer">
-                <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © GROUP33@ANKA
-                        2022</span>
-
-                </div>
-            </footer>
+            
             <!-- partial -->
         </div>
         <!-- page-body-wrapper ends -->
     </div>
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © GROUP33@ANKA
+                2022</span>
+
+        </div>
+    </footer>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
