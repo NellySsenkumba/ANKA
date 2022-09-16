@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +21,5 @@ Route::get('/', function () {
 
 Route::get('/Customer',  [CustomerController::class, 'index']);
 Route::get('/Customer/participants',  [CustomerController::class, 'participants']);
-Route::get('/Customer/test',  [CustomerController::class, 'test']);
+Route::get('/Admin',  [AdminController::class, 'index']);
+
