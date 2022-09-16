@@ -3,7 +3,7 @@ public class Post {
     public void post() throws IOException {
 String command;
         
-            String filename = "participant.txt";
+            String filename = "products.txt";
             //PrintWriter p=null;
             System.out.println("Enter a command");
             BufferedReader b = new BufferedReader(new InputStreamReader(System.in));

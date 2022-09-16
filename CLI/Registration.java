@@ -6,7 +6,7 @@ public class Registration {
     
     public void register() throws IOException {
         
-            String filename = "participant.txt";
+            String filename = "registration.txt";
             //PrintWriter p=null;
             BufferedReader b = new BufferedReader(new InputStreamReader(System.in));
             System.out.println("Enter your details in the following order 'command name password product date_of_birth'");
