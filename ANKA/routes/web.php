@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,6 +26,10 @@ Route::get('/Customer/products',  [CustomerController::class, 'index']);
 Route::get('/Customer/participants',  [CustomerController::class, 'participants']);
 Route::get('/Admin/reports',  [AdminController::class, 'index']);
 Route::get('/Admin/participants',  [AdminController::class, 'participant']);
+
+
+Route::get('/login2',  [TestController::class, 'login']);
+Route::get('/register2',  [TestController::class, 'register']);
 
 
 Auth::routes();
