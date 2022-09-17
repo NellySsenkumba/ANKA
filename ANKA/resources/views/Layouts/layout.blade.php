@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ANKA </title>
+    <title>ANKA Customer</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
@@ -40,7 +40,7 @@
                 <li class="nav-item menu-items">
                     <a class="nav-link" href="/Customer/products">
                         <span class="menu-icon">
-                            <i class="mdi mdi-speedometer"></i>
+                            <i class="mdi mdi-package-variant-closed"></i>
                         </span>
                         <span class="menu-title">Products</span>
                     </a>
@@ -48,7 +48,7 @@
                 <li class="nav-item menu-items">
                     <a class="nav-link" href="/Customer/participants">
                         <span class="menu-icon">
-                            <i class="mdi mdi-speedometer"></i>
+                            <i class="mdi mdi-account-multiple"></i>
                         </span>
                         <span class="menu-title">Participants</span>
                     </a>
@@ -166,6 +166,7 @@
                 </div>
             </nav>
             <!-- partial -->
+            <div class="main-panel">
 
 
 
@@ -173,19 +174,20 @@
             @yield('content')
 
 
-
-            
+            <footer class="footer">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © GROUP33@ANKA
+                        2022</span>
+    
+                </div>
+            </footer>
+            </div>
             <!-- partial -->
         </div>
         <!-- page-body-wrapper ends -->
-    </div>
-    <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © GROUP33@ANKA
-                2022</span>
 
-        </div>
-    </footer>
+        
+    </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="/assets/vendors/js/vendor.bundle.base.js"></script>

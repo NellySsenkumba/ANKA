@@ -1,5 +1,6 @@
 @extends('Layouts.layout')
-@section('content') <div class="main-panel">
+@section('content') 
+
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title"> Products</h3>
@@ -39,6 +40,6 @@
             </div>
         </div>
     </div>
-</div>
+
 
 @endsection

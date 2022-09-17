@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return redirect('/Customer/products');
 });
 
 Route::get('/Customer/products',  [CustomerController::class, 'index']);
 Route::get('/Customer/participants',  [CustomerController::class, 'participants']);
-Route::get('/Admin',  [AdminController::class, 'index']);
+Route::get('/Admin/reports',  [AdminController::class, 'index']);
+Route::get('/Admin/participants',  [AdminController::class, 'participant']);
 

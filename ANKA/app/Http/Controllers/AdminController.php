@@ -10,5 +10,9 @@ class AdminController extends Controller
     public function index(){
         return view('Admin.index');
     }
+
+    public function participant(){
+        return view('Admin.participants');
+    }
     
 }
