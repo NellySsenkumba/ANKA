@@ -47,7 +47,7 @@
                 
 
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="/Admin/reports">
+                    <a class="nav-link" href="{{ route('Admin.reports') }}">
                         <span class="menu-icon">
                             <i class="mdi mdi-chart-bar"></i>
                         </span>
@@ -55,7 +55,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="/Admin/participants">
+                    <a class="nav-link" href="{{ route('Admin.participants') }}">
                         <span class="menu-icon">
                             <i class="mdi mdi-account-multiple"></i>
                         </span>

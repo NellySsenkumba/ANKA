@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Name;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,15 +23,17 @@ Route::get('/', function () {
     return redirect('/Customer/products');
 });
 
-Route::get('/Customer/products',  [CustomerController::class, 'index']);
-Route::get('/Customer/participants',  [CustomerController::class, 'participants']);
-Route::get('/Admin/reports',  [AdminController::class, 'index']);
-Route::get('/Admin/participants',  [AdminController::class, 'participant']);
+Route::get('/Customer/products',  [CustomerController::class, 'index'])->name('Customer.products');
+Route::get('/Customer/participants',  [CustomerController::class, 'participants'])->name('Customer.participants');
+Route::get('/Admin/reports',  [AdminController::class, 'index'])->name('Admin.reports');
+Route::get('/Admin/participants',  [AdminController::class, 'participant'])->name('Admin.participants');
 
 
 
 
-Auth::routes();
+Auth::routes(
+    // ['register'=>false]
+);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

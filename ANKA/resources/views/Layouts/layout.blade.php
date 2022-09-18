@@ -36,13 +36,13 @@
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
                 <a class="sidebar-brand brand-logo" href="/Customer"><img src="/assets/images/logo.png"
                         alt="logo" /></a>
-                <a class="sidebar-brand brand-logo-mini" href="/Customer"><img src="/assets/images/logo-mini.png"
+                <a class="sidebar-brand brand-logo-mini" href="{{ route('Customer.products') }}"><img src="/assets/images/logo-mini.png"
                         alt="logo" /></a>
             </div>
             <ul class="nav">
 
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="/Customer/products">
+                    <a class="nav-link" href="{{ route('Customer.products') }}">
                         <span class="menu-icon">
                             <i class="mdi mdi-package-variant-closed"></i>
                         </span>
@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="/Customer/participants">
+                    <a class="nav-link" href="{{ route('Customer.participants') }}">
                         <span class="menu-icon">
                             <i class="mdi mdi-account-multiple"></i>
                         </span>
