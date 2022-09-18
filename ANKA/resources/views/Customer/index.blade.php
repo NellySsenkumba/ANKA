@@ -1,5 +1,7 @@
 @extends('Layouts.layout')
-@section('content') 
+@section('content')
+
+
 
     <div class="content-wrapper">
         <div class="page-header">

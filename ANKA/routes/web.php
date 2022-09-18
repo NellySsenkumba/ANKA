@@ -28,10 +28,9 @@ Route::get('/Admin/reports',  [AdminController::class, 'index']);
 Route::get('/Admin/participants',  [AdminController::class, 'participant']);
 
 
-Route::get('/login2',  [TestController::class, 'login']);
-Route::get('/register2',  [TestController::class, 'register']);
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
