@@ -26,8 +26,12 @@
 </head>
 
 <body>
-    
+    @guest
 
+    @else
+    @if( Auth::User()->role=='1')
+    <script>window.location = "/Admin/reports";</script>
+    @else
     <div class="container-scroller">
         
         
@@ -199,6 +203,14 @@
 
         
     </div>
+
+    @endif
+
+
+        
+    @endguest
+
+    
     
     <!-- container-scroller -->
     <!-- plugins:js -->

@@ -34,6 +34,12 @@
 </head>
 
 <body>
+
+    @guest
+    @else
+    @if( Auth::User()->role=='0')
+    <script>window.location = "/Customer/products";</script>
+    @else
     <div class="container-scroller">
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -299,6 +305,9 @@
         </div>
         <!-- page-body-wrapper ends -->
     </div>
+    
+    @endif
+    @endguest
     
     <!-- container-scroller -->
     <!-- plugins:js -->
