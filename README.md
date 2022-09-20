@@ -1,2 +1,0 @@
-# ANKA
-GROUP 33
