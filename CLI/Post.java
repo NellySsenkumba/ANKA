@@ -1,4 +1,5 @@
 import java.io.*;
+
 public class Post {
     public void post() throws IOException {
 String command;
@@ -10,6 +11,8 @@ String command;
             command=b.readLine();
             System.out.println("Post_product product_name description");
             String details = b.readLine();
+
+            String write="Post_product, product_name, description,0"
             PrintWriter p  = new PrintWriter(new FileWriter(filename,true),true);
             p.print(command+" ");
 
@@ -22,4 +25,4 @@ String command;
             p.print(details);
             p.close();            
         }
-    }
+}
