@@ -16,7 +16,7 @@ public class Registration {
         String product = sc.next();
         String date_of_birth = sc.next();
         PrintWriter p = new PrintWriter(new FileWriter(filename, true), true);
-        p.print(name + "," + password + "," + product + "," + date_of_birth + "0");
+        p.print(name + "," + password + "," + product + "," + date_of_birth + ",0");
         p.close();
 
     }
