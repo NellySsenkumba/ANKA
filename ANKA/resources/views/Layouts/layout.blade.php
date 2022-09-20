@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ANKA </title>
+    <title>ANKA Customer</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/assets/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="/assets/vendors/owl-carousel-2/owl.carousel.min.css">
     <link rel="stylesheet" href="/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
-    
+
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -26,29 +26,37 @@
 </head>
 
 <body>
+    @guest
+
+    @else
+    @if( Auth::User()->role=='1')
+    <script>window.location = "/Admin/reports";</script>
+    @else
     <div class="container-scroller">
+        
+        
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-                <a class="sidebar-brand brand-logo" href="/Customer"><img src="/assets/images/logo.svg"
+                <a class="sidebar-brand brand-logo" href="/Customer"><img src="/assets/images/logo.png"
                         alt="logo" /></a>
-                <a class="sidebar-brand brand-logo-mini" href="/Customer"><img src="/assets/images/logo-mini.svg"
+                <a class="sidebar-brand brand-logo-mini" href="{{ route('Customer.products') }}"><img src="/assets/images/logo-mini.png"
                         alt="logo" /></a>
             </div>
             <ul class="nav">
-                
+
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="/Customer">
+                    <a class="nav-link" href="{{ route('Customer.products') }}">
                         <span class="menu-icon">
-                            <i class="mdi mdi-speedometer"></i>
+                            <i class="mdi mdi-package-variant-closed"></i>
                         </span>
                         <span class="menu-title">Products</span>
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="/Customer/participants">
+                    <a class="nav-link" href="{{ route('Customer.participants') }}">
                         <span class="menu-icon">
-                            <i class="mdi mdi-speedometer"></i>
+                            <i class="mdi mdi-account-multiple"></i>
                         </span>
                         <span class="menu-title">Participants</span>
                     </a>
@@ -61,7 +69,7 @@
             <!-- partial:partials/_navbar.html -->
             <nav class="navbar p-0 fixed-top d-flex flex-row">
                 <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/assets/images/logo-mini.svg"
+                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/assets/images/logo-mini.png"
                             alt="logo" /></a>
                 </div>
                 <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
@@ -125,7 +133,7 @@
                             <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                                 <div class="navbar-profile">
                                     <img class="img-xs rounded-circle" src="/assets/images/faces/face15.jpg" alt="">
-                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ Auth::user()->name }}</p>
                                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                                 </div>
                             </a>
@@ -144,18 +152,22 @@
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
+                                
+                                <a class="dropdown-item preview-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"s>
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-logout text-danger"></i>
                                         </div>
                                     </div>
                                     <div class="preview-item-content">
-                                        <p class="preview-subject mb-1">Log out</p>
+                                        <p class="preview-subject mb-1">{{ __('Logout') }}</p>
                                     </div>
                                 </a>
-                                <div class="dropdown-divider"></div>
-                                <p class="p-3 mb-0 text-center">Advanced settings</p>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                                
                             </div>
                         </li>
                     </ul>
@@ -165,7 +177,11 @@
                     </button>
                 </div>
             </nav>
+            
             <!-- partial -->
+            <div class="main-panel">
+                <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+                    
 
 
 
@@ -173,18 +189,29 @@
             @yield('content')
 
 
-
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                     <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © GROUP33@ANKA
                         2022</span>
-
+    
                 </div>
             </footer>
+            </div>
             <!-- partial -->
         </div>
         <!-- page-body-wrapper ends -->
+
+        
     </div>
+
+    @endif
+
+
+        
+    @endguest
+
+    
+    
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="/assets/vendors/js/vendor.bundle.base.js"></script>

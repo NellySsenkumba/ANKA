@@ -1,15 +1,16 @@
 @extends('Layouts.layout')
-@section('content') <div class="main-panel">
+@section('content')
+
+
+
     <div class="content-wrapper">
-        <div class="row"></div>
+        <div class="page-header">
+            <h3 class="page-title"> Products</h3>
+        </div>
         <div class="row">
             <div class="col-md-12 grid-margin">
                 <div class="card">
                     <div class="card-body">
-                        <div class="d-flex flex-row justify-content-between">
-                            <h4 class="card-title">PRODUCTS</h4>
-
-                        </div>
                         <div class="preview-list">
                             @foreach ($products as $pdt)
                             <div class="preview-item border-bottom">
@@ -41,6 +42,6 @@
             </div>
         </div>
     </div>
-</div>
+
 
 @endsection

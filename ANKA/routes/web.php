@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Name;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +19,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return redirect('/Customer/products');
 });
 
-Route::get('/Customer',  [CustomerController::class, 'index']);
-Route::get('/Customer/participants',  [CustomerController::class, 'participants']);
-Route::get('/Admin',  [AdminController::class, 'index']);
+Route::get('/Customer/products',  [CustomerController::class, 'index'])->name('Customer.products');
+Route::get('/Customer/participants',  [CustomerController::class, 'participants'])->name('Customer.participants');
+Route::get('/Admin/reports',  [AdminController::class, 'index'])->name('Admin.reports');
+Route::get('/Admin/participants',  [AdminController::class, 'participant'])->name('Admin.participants');
+
+
+
+
+Auth::routes(
+    // ['register'=>false]
+);
 
