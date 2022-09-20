@@ -1,1 +1,0 @@
-Register, joe, 1234, milk ,2000
