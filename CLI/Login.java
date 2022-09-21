@@ -34,7 +34,7 @@ public class Login {
         
     }
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        Login l = new Login();
-        l.login();
+        Login g = new Login();
+        g.login();
     }
 }
