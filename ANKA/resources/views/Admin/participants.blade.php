@@ -26,7 +26,7 @@
                                 <tr>
                                     <td>{{ $pat->name }}</td>
                                     <td>{{ $pat->name }}</td>
-                                    <td>{{ $pat->name }}</td>
+                                    <td>{{ $pat->points }}</td>
                                     <td>{{ $pat->name }}</td>
 
                                 </tr>

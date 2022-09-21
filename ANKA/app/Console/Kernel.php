@@ -101,7 +101,7 @@ class Kernel extends ConsoleKernel
                         
                             $product=Product::where('name',$users[$i][0])->get();
                             $initial_quantity=(int)$product[0]['total_quantity'];
-                            echo($initial_quantity);
+                            
 
                             Product::where('name',$users[$i][0])
                                 ->update(['description'=>$users[$i][3],
@@ -128,6 +128,61 @@ class Kernel extends ConsoleKernel
                     }
                 
                 
+                    fclose($open);
+    
+    
+                }
+    
+    
+    
+           
+            })->everyMinute();
+
+            //performance
+            $schedule->call(function () {
+
+                $users=[];
+                if(($open=fopen(storage_path()."/performance.csv","r+"))!=FALSE){
+                    while(($data=fgetcsv($open))!=FALSE){
+                        $users[]=$data;
+                    }
+                    
+    
+                    // for($i=1;$i<count($users);$i++){
+                        // if ($users[$i][4]=='0'){
+                            
+                        
+                            //insert in the database
+                        
+                            
+                            
+
+
+                            
+                            // $users[$i][4]='1';
+                       
+    
+                        // }
+                    
+    
+                    // }
+                    
+                
+    
+                    fseek($open,0);
+                    
+                    
+                    $participant=Participant::all();
+                    // foreach ($users as $row) {
+                    // fputcsv($open,$row);
+                    // }
+                    fputcsv($open,['participant ID','participant name','points']);
+                    foreach ($participant as $pat) {
+                        fputcsv($open,[$pat->id,$pat->name,$pat->points]);
+                        }
+                    
+                
+                    
                     fclose($open);
     
     
