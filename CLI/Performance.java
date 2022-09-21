@@ -10,7 +10,7 @@ public class Performance {
                 System.out.println("File successfully created");
                 System.out.println("File created: " + myObj.getName());
             } else {
-                System.out.println("File already exists.");
+                System.out.println("File already exists....");
             }
         } catch (IOException e) {
             System.out.println("An error occurred.");
