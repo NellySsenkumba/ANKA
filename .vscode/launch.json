@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Registration",
+            "request": "launch",
+            "mainClass": "Registration",
+            "projectName": "ANKA_d3998eec"
+        },
+        {
+            "type": "java",
             "name": "Launch Time",
             "request": "launch",
             "mainClass": "Time",
