@@ -4,7 +4,7 @@ import java.security.Timestamp;
 import java.time.*;
 
 public class Registration {
-    public static void menu(){
+    public static void menu() {
         System.out.println("register- adds you to participants");
         System.out.println("exit-takes you to the menu");
         System.out.println("post");
