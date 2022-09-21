@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('participants', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('password');
+            $table->date('DOB');
+            $table->integer('points');
             $table->timestamps();
         });
     }
