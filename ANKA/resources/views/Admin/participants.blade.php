@@ -22,38 +22,17 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($participants as $pat)
                                 <tr>
-                                    <td>Jacob</td>
-                                    <td>Jacob</td>
-                                    <td>Jacob</td>
-                                    <td>Jacob</td>
+                                    <td>{{ $pat->name }}</td>
+                                    <td>{{ $pat->name }}</td>
+                                    <td>{{ $pat->name }}</td>
+                                    <td>{{ $pat->name }}</td>
 
                                 </tr>
-                                <tr>
-                                    <td>Messsy</td>
-                                    <td>Flash</td>
-                                    <td>Jacob</td>
-                                    <td>Jacob</td>
-
-                                </tr>
-                                <tr>
-                                    <td>John</td>
-                                    <td>Premier</td>
-                                    <td>Jacob</td>
-                                    <td>Jacob</td>
-                                </tr>
-                                <tr>
-                                    <td>Peter</td>
-                                    <td>After effects</td>
-                                    <td>Jacob</td>
-                                    <td>Jacob</td>
-                                </tr>
-                                <tr>
-                                    <td>Dave</td>
-                                    <td>53275535</td>
-                                    <td>Jacob</td>
-                                    <td>Jacob</td>
-                                </tr>
+                                @endforeach
+                                
+                                
                             </tbody>
                         </table>
                     </div>

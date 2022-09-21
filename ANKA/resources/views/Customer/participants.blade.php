@@ -26,14 +26,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                    @foreach ($participants as $pat)
                                     <tr>
-                                        <td> 1 </td>
-                                        <td> Isaac</td>
-                                        <td> Milk </td>
-                                        <td> 10 </td>
-                                        <td> 14 </td>
+                                        <td>{{ $pat->name }}</td>
+                                        <td>{{ $pat->name }}</td>
+                                        <td>{{ $pat->name }}</td>
+                                        <td>{{ $pat->name }}</td>
+                                        <td>{{ $pat->name }}</td>
+    
                                     </tr>
+                                    @endforeach
+                                    
+                                    
                                 </tbody>
                             </table>
                         </div>

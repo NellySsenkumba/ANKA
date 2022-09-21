@@ -13,7 +13,7 @@ public class Product {
     public static String choice;
     String menu;
 
-    void show() throws IOException {
+    public void show() throws IOException {
 
         // Scanner s = new Scanner(System.in);
         System.out.println("\n--------Enter your choice--------");
@@ -53,8 +53,8 @@ public class Product {
             // String product = pro_name + ", " + pro_qt + ", " + pro_px + ", " + pro_desc +
             // ", " + Updated;
 
-            w.println(
-                    pro_name + ", " + pro_qt + ", " + pro_px + ", " + pro_desc + ", " + formattedDate + ", " + Updated);
+            w.println("Post product_" + pro_name + ", " + pro_qt + ", " + pro_px + ", " + pro_desc + ", "
+                    + formattedDate + ", " + Updated);
             wr.show();
 
         } else if (choice.equalsIgnoreCase("View Performance")) {
