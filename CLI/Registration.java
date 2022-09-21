@@ -14,13 +14,14 @@ public class Registration {
     
     public static void main(String[] args) throws IOException {
         
-            String filename = "D:/xampp/htdocs/ANKA/ANKA/storage/registration.csv";
+            String filename = "./ANKA/storage/registration.csv";
             //PrintWriter p=null;
             LocalTime t = LocalTime.now();
             Scanner sc = new Scanner(System.in);
             System.out.println("Enter your details in the following order 'command name password product date_of_birth'");
             String command = sc.next();
-            
+            PrintWriter p  = new PrintWriter(new FileWriter(filename,true),true);
+            //p.println("name"+","+"password"+","+"product"+","+"date_of_birth"+","+"time"+","+"update");
 
             if(command.equalsIgnoreCase("register")&&!command.equalsIgnoreCase("exit")){
                 int update=0;
@@ -28,9 +29,11 @@ public class Registration {
                 String password = sc.next();
                 String product = sc.next();
                 String date_of_birth=sc.next();
-            PrintWriter p  = new PrintWriter(new FileWriter(filename,true),true);
-            p.println(name+","+password+","+product+","+date_of_birth+","+update+","+t);
-            p.close();            
+           
+            p.println(name+","+password+","+product+","+date_of_birth+","+t+","+update);
+            sc.close();
+            p.close(); 
+                   
             }else{
                 menu();
             }
