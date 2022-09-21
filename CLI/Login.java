@@ -27,6 +27,19 @@ public class Login {
         if(exist==1){
             System.out.println("Successfully logged in"); 
             //run performance method
+            Scanner s = new Scanner(System.in);
+            System.out.println("to view your performance type 'performance'");
+            System.out.println("to post a product type 'post_product;");
+            String choice = s.nextLine();
+            if(choice.equalsIgnoreCase("Performance")){
+                Performance p = new Performance();
+                p.performance();
+            }else if(choice.equalsIgnoreCase("post_product")){
+                Product pd = new Product();
+                pd.show();
+                pd.post();
+            }
+
         }  
         else{
             System.out.println("Login Failed");

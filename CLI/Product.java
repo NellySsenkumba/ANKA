@@ -28,8 +28,8 @@ public class Product {
 
     }
 
-    public static void main(String[] args) throws IOException {
-        String filename = "C:/xampp/htdocs/ANKA/ANKA/storage/product.csv";
+    public void post() throws IOException {
+        String filename = "./ANKA/storage/product.csv";
         PrintWriter w = new PrintWriter(new FileWriter(filename, true), true);
 
         LocalDateTime ts = LocalDateTime.now();

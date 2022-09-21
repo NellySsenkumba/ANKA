@@ -2,10 +2,10 @@ import java.io.File; // Import the File class
 import java.io.IOException; // Import the IOException class to handle errors
 
 public class Performance {
-    public static void main(String[] args) {
+    public void performance() {
 
         try {
-            File myObj = new File("C:/xampp/htdocs/ANKA/ANKA/storage/performance.csv");
+            File myObj = new File("./ANKA/storage/performance.csv");
             if (myObj.createNewFile()) {
                 System.out.println("File successfully created...");
                 System.out.println("File created: " + myObj.getName());
