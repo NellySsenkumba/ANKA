@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-register,isaac,1234,milk,2001,0
-=======
-isaac,200,milk,2001,0
-jo,123,juice,2001,0
-mary,4848,bread,2001,0
->>>>>>> Stashed changes
+isaac,123,milk,2001,0,10:04:17.323124900
+joseph,234,juice,2004,0,10:04:48.832937200
+mariam,0303,phones,2000,0,10:05:15.134075900
