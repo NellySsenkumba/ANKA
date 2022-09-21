@@ -39,17 +39,21 @@ class Kernel extends ConsoleKernel
 
                             $participant->name=$users[$i][0];
                             $participant->password=$users[$i][1];
-                            // $product->name=$users[$i][2];
+                            
                             
                             $participant->DOB=date('Y-m-d',strtotime($users[$i][3]));
                             $participant->save();
 
-                            // $participantlink=Participant::where('name','isaac')->get();
+                            $product=new Product();
+                            $product->name=$users[$i][2];
 
-                            // $product->participants_id=$participantlink->id;
+                            $participantlink=Participant::where('name',$users[$i][0] )->get();
+                            
+
+                            $product->participants_id=$participantlink[0]['id'];
                             
                             
-                            // $product->save();
+                            $product->save();
                             
                             $users[$i][4]='1';
                        
