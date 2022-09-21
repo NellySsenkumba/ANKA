@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Login",
+            "request": "launch",
+            "mainClass": "Login",
+            "projectName": "ANKA_b4325ac7"
+        },
+        {
+            "type": "java",
             "name": "Launch Tests",
             "request": "launch",
             "mainClass": "Tests",
