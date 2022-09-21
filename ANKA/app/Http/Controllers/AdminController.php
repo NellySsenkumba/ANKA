@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Participant;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -16,7 +17,8 @@ class AdminController extends Controller
     }
 
     public function participant(){
-        return view('Admin.participants');
+        $participants=Participant::all();
+        return view('Admin.participants',['participants'=>$participants]);
     }
     
 }
