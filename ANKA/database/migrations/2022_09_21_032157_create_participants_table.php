@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('password');
             $table->date('DOB');
-            $table->integer('points');
+            $table->integer('points')->default(0);
             $table->timestamps();
         });
     }

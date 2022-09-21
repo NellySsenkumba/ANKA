@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Models\Participant;
+use App\Models\Product;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -28,22 +29,29 @@ class Kernel extends ConsoleKernel
                     }
                     
     
-                    for($i=0;$i<count($users);$i++){
-                        if ($users[$i][5]=='0'){
+                    for($i=1;$i<count($users);$i++){
+                        if ($users[$i][4]=='0'){
                             
                         
                             //insert in the database
                         
-                            $participant=new (new Participant());
+                            $participant=new Participant();
 
                             $participant->name=$users[$i][0];
                             $participant->password=$users[$i][1];
-                            // $participant->base=$users[$i][2];
-                            $participant->DOB=$users[$i][3];
+                            // $product->name=$users[$i][2];
                             
+                            $participant->DOB=date('Y-m-d',strtotime($users[$i][3]));
                             $participant->save();
+
+                            // $participantlink=Participant::where('name','isaac')->get();
+
+                            // $product->participants_id=$participantlink->id;
                             
-                            $users[$i][5]='1';
+                            
+                            // $product->save();
+                            
+                            $users[$i][4]='1';
                        
     
                         }
@@ -73,54 +81,54 @@ class Kernel extends ConsoleKernel
             })->everyMinute();
 
         // Posting products    
-        $schedule->call(function () {
+        // $schedule->call(function () {
 
-                $users=[];
-                if(($open=fopen(storage_path()."/products.csv","r+"))!=FALSE){
-                    while(($data=fgetcsv($open))!=FALSE){
-                        $users[]=$data;
-                    }
+        //         $users=[];
+        //         if(($open=fopen(storage_path()."/products.csv","r+"))!=FALSE){
+        //             while(($data=fgetcsv($open))!=FALSE){
+        //                 $users[]=$data;
+        //             }
     
-                    for($i=1;$i<count($users);$i++){
-                        if ($users[$i][4]=='0'){
+        //             for($i=1;$i<count($users);$i++){
+        //                 if ($users[$i][4]=='0'){
                             
                         
-                            //insert
+        //                     //insert
                         
-                            // $pizza=new (new Pizza);
+        //                     // $pizza=new (new Pizza);
 
-                            // $pizza->name=$users[$i][0];
-                            // $pizza->type=$users[$i][1];
-                            // $pizza->base=$users[$i][2];
-                            // $pizza->toppings=$users[$i][3];
+        //                     // $pizza->name=$users[$i][0];
+        //                     // $pizza->type=$users[$i][1];
+        //                     // $pizza->base=$users[$i][2];
+        //                     // $pizza->toppings=$users[$i][3];
                             
-                            // $pizza->save();
+        //                     // $pizza->save();
                             
-                            // $users[$i][4]='1';
+        //                     // $users[$i][4]='1';
                        
     
-                        }
+        //                 }
                     
     
-                    }
+        //             }
                 
                 
     
-                    fseek($open,0);
-                    foreach ($users as $row) {
-                    fputcsv($open,$row);
-                    }
+        //             fseek($open,0);
+        //             foreach ($users as $row) {
+        //             fputcsv($open,$row);
+        //             }
                 
                 
-                    fclose($open);
+        //             fclose($open);
     
     
-                }
+        //         }
     
     
     
            
-            })->everyMinute();
+        //     })->everyMinute();
 
         
     }
