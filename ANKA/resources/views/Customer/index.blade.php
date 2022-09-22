@@ -3,45 +3,49 @@
 
 
 
-    <div class="content-wrapper">
-        <div class="page-header">
-            <h3 class="page-title"> Products</h3>
-        </div>
-        <div class="row">
-            <div class="col-md-12 grid-margin">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="preview-list">
-                            @foreach ($products as $pdt)
-                            <div class="preview-item border-bottom">
-                                <div class="preview-item-content d-flex flex-grow">
-                                    <div class="flex-grow">
-                                        <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                                            <h6 class="preview-subject">{{ $pdt->name }}</h6>
-                                            <button type="button" class="btn btn-outline-success">ORDER</button>
-                                            
+<div class="content-wrapper">
+    <div class="border-top my-3">
+        <div class="p-3 mb-2 bg-dark text-white">
 
-                                        </div>
-                                        <p class="text-muted">{{ $pdt->description }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
+            <section class="container content-section">
+                <h2 class="section-header">PRODUCTS</h2>
+                <div class="cart-row">
+                    <span class="cart-item cart-header cart-column">
 
-                            <div class="preview-item-content d-flex flex-grow">
-                                <div class="flex-grow">
-                                    <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                                        
-                                    </div>
-                                    <p class="text-muted"></p>
-                                </div>
-                            </div>
+                    </span>
+                    <span class="cart-price cart-header cart-column">PRICE</span>
+                    <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+
+                </div>
+                <div class="cart-items">
+                    @foreach ($products as $pdt)
+                        
+                    
+                    <div class="cart-row">
+                        <div class="cart-item cart-column">
+                            <span class="cart-item-title">
+                                <h5>{{ $pdt->name }}</h5>
+                                <Br>
+                                <p>{{$pdt->description}}</p>
+                            </span>
+                        </div>
+                        <span class="cart-price cart-column">${{ $pdt->price }}</span>
+                        <div class="cart-quantity cart-column">
+                            <input class="cart-quantity-input" type="number" value="0">
                         </div>
                     </div>
+                    @endforeach
                 </div>
-            </div>
+                <div class="cart-total">
+                    <strong class="cart-total-title">Total</strong>
+                    <span class="cart-total-price">$0</span>
+                </div>
+                <button class="btn btn-primary btn-purchase" type="button">BOOK NOW</button>
+            </section>
+
+
         </div>
     </div>
-
+</div>
 
 @endsection

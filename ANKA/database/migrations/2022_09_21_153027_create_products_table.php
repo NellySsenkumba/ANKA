@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('left_quantity')->nullable();
             $table->unsignedBigInteger('participants_id');
             $table->foreign('participants_id')->references('id')->on('products');
+            $table->string('return_buyer');
             $table->timestamps();
         });
     }

@@ -24,10 +24,10 @@ Route::get('/', function () {
 });
 
 Route::get('/Customer/products',  [CustomerController::class, 'index'])->name('Customer.products');
+Route::post('/Customer/products',  [CustomerController::class, 'create'])->name('Customer.products');
 Route::get('/Customer/participants',  [CustomerController::class, 'participants'])->name('Customer.participants');
 Route::get('/Admin/reports',  [AdminController::class, 'index'])->name('Admin.reports');
 Route::get('/Admin/participants',  [AdminController::class, 'participant'])->name('Admin.participants');
-
 
 
 

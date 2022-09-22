@@ -18,6 +18,13 @@ class CustomerController extends Controller
         return view('Customer.index',["products"=>$products]);
     }
 
+    public function create(){
+        $name=request('name');
+        $quantity=request('quantity');
+        
+        return redirect('/Customer/products')->with('message','Thanks for your order');
+    }
+
     public function participants(){
         $participants=Participant::all();
         return view('Customer.participants',['participants'=>$participants]);

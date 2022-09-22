@@ -9,6 +9,7 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/assets/css/cart.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="/assets/vendors/jvectormap/jquery-jvectormap.css">
@@ -21,6 +22,8 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/delete.js" async></script>
+    
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/assets/images/favicon.png" />
 </head>

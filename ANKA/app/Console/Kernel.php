@@ -150,7 +150,7 @@ class Kernel extends ConsoleKernel
                     
     
                     for($i=1;$i<count($users);$i++){
-                        if ($users[$i][2]=='0'){
+                        if ($users[$i][1]=='0'){
                             
                         
                             // Write in report file
@@ -180,7 +180,7 @@ class Kernel extends ConsoleKernel
 
 
                             
-                            // $users[$i][2]='1';
+                            $users[$i][1]='1';
                        
     
                         }
