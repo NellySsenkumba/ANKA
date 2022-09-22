@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
 public class Product {
 
     public static String choice;
-    String menu;
+    //String menu;
 
     public void show() throws IOException {
 
@@ -29,6 +29,19 @@ public class Product {
     }
 
     public void post() throws IOException {
+        
+          // Scanner s = new Scanner(System.in);
+          System.out.println("\n--------Enter your choice--------");
+          System.out.println("Add Product");
+          System.out.println("View Performance");
+          System.out.println("Edit Quantity");
+          System.out.println("Exit");
+          System.out.println("-------------------------------\n");
+  
+          BufferedReader reader1 = new BufferedReader(new InputStreamReader(System.in));
+          choice = reader1.readLine();
+  
+
         String filename = "./ANKA/storage/product.csv";
         PrintWriter w = new PrintWriter(new FileWriter(filename, true), true);
 

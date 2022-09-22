@@ -1,4 +1,5 @@
-name,password,product,dob,updated
-isaac,123,milk,2001-12-12,1
-mary,456,juice,2002-12-12,1
-joseph,234,bread,2009-12-12,1
+isaac,123,milk,2001,0
+quin,789,phones,2001,0
+mariam,299,laptops,2009,0
+monica,124,bread,2000,0
+monica,567,juice,2009,0
