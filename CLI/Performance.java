@@ -7,14 +7,14 @@ import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
 public class Performance {
     public void performance() {
         
-        LocalDateTime ts = LocalDateTime.now();
-        DateTimeFormatter ty = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = ts.format(ty);
+        LocalDateTime t = LocalDateTime.now();
+        DateTimeFormatter tm = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String time = t.format(tm);
 
         try {
             File myObj = new File("./ANKA/storage/performance.csv");
             if (myObj.createNewFile()) {
-                System.out.println("File successfully created at " + formattedDate);
+                System.out.println("File successfully created at " + time);
                 System.out.println("File created: " + myObj.getName());
             } else {
                 System.out.println("File already exists...");
