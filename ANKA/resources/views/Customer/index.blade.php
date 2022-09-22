@@ -17,7 +17,7 @@
                                 <div class="preview-item-content d-flex flex-grow">
                                     <div class="flex-grow">
                                         <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                                            <h6 class="preview-subject">{{ $pdt->product }}</h6>
+                                            <h6 class="preview-subject">{{ $pdt->name }}</h6>
                                             <button type="button" class="btn btn-outline-success">ORDER</button>
                                             
 

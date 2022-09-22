@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Participant;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -18,7 +19,8 @@ class CustomerController extends Controller
     }
 
     public function participants(){
-        return view('Customer.participants');
+        $participants=Participant::all();
+        return view('Customer.participants',['participants'=>$participants]);
     }
 
 }

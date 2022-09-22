@@ -1,3 +1,5 @@
-juice, 23, 3444, sweet, 0
-cars, 89, 2000000, brandnew, 0
-pizza, 90, 20000, tasty, 0
+name,quantity,price,description,updated
+milk," 23"," 230"," vanilla flavour",1
+juice," 4"," 2.8M"," lenovo",1
+bread," 7"," 9500"," white",1
+phone," 10"," 3500000"," iphone 14",1

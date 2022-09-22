@@ -85,54 +85,113 @@ class Kernel extends ConsoleKernel
             })->everyMinute();
 
         // Posting products    
-        // $schedule->call(function () {
+        $schedule->call(function () {
 
-        //         $users=[];
-        //         if(($open=fopen(storage_path()."/products.csv","r+"))!=FALSE){
-        //             while(($data=fgetcsv($open))!=FALSE){
-        //                 $users[]=$data;
-        //             }
+                $users=[];
+                if(($open=fopen(storage_path()."/product.csv","r+"))!=FALSE){
+                    while(($data=fgetcsv($open))!=FALSE){
+                        $users[]=$data;
+                    }
     
-        //             for($i=1;$i<count($users);$i++){
-        //                 if ($users[$i][4]=='0'){
+                    for($i=1;$i<count($users);$i++){
+                        if ($users[$i][4]=='0'){
                             
                         
-        //                     //insert
+                            //update table
                         
-        //                     // $pizza=new (new Pizza);
+                            $product=Product::where('name',$users[$i][0])->get();
+                            $initial_quantity=(int)$product[0]['total_quantity'];
+                            
 
-        //                     // $pizza->name=$users[$i][0];
-        //                     // $pizza->type=$users[$i][1];
-        //                     // $pizza->base=$users[$i][2];
-        //                     // $pizza->toppings=$users[$i][3];
+                            Product::where('name',$users[$i][0])
+                                ->update(['description'=>$users[$i][3],
+                                        'price'=>(int)$users[$i][2],
+                                        'total_quantity'=>(int)$users[$i][1]+$initial_quantity
+                                    ]);
+
                             
-        //                     // $pizza->save();
                             
-        //                     // $users[$i][4]='1';
+                            
+                            $users[$i][4]='1';
                        
     
-        //                 }
+                        }
                     
     
-        //             }
+                    }
                 
                 
     
-        //             fseek($open,0);
-        //             foreach ($users as $row) {
-        //             fputcsv($open,$row);
-        //             }
+                    fseek($open,0);
+                    foreach ($users as $row) {
+                    fputcsv($open,$row);
+                    }
                 
                 
-        //             fclose($open);
+                    fclose($open);
     
     
-        //         }
+                }
     
     
     
            
-        //     })->everyMinute();
+            })->everyMinute();
+
+            //performance
+            $schedule->call(function () {
+
+                $users=[];
+                if(($open=fopen(storage_path()."/performance.csv","r+"))!=FALSE){
+                    while(($data=fgetcsv($open))!=FALSE){
+                        $users[]=$data;
+                    }
+                    
+    
+                    // for($i=1;$i<count($users);$i++){
+                        // if ($users[$i][4]=='0'){
+                            
+                        
+                            //insert in the database
+                        
+                            
+                            
+
+
+                            
+                            // $users[$i][4]='1';
+                       
+    
+                        // }
+                    
+    
+                    // }
+                    
+                
+    
+                    fseek($open,0);
+                    
+                    
+                    $participant=Participant::all();
+                    // foreach ($users as $row) {
+                    // fputcsv($open,$row);
+                    // }
+                    fputcsv($open,['participant ID','participant name','points']);
+                    foreach ($participant as $pat) {
+                        fputcsv($open,[$pat->id,$pat->name,$pat->points]);
+                        }
+                    
+                
+                    
+                    fclose($open);
+    
+    
+                }
+    
+    
+    
+           
+            })->everyMinute();
 
         
     }

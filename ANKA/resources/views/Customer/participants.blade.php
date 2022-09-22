@@ -32,7 +32,7 @@
                                         <td>{{ $pat->name }}</td>
                                         <td>{{ $pat->name }}</td>
                                         <td>{{ $pat->name }}</td>
-                                        <td>{{ $pat->name }}</td>
+                                        <td>{{ $pat->points }}</td>
     
                                     </tr>
                                     @endforeach
