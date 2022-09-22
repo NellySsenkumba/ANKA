@@ -103,10 +103,19 @@ public void command() throws IOException, FileNotFoundException{
     
     //Performance.....
     else if(command.equalsIgnoreCase("performance")&&!command.equalsIgnoreCase("exit")){
-        Performance per = new Performance();
-        per.performance();
+        System.out.println("Your results will be displayed in 1 minute");
+        
+        String filename3="./ANKA/storage/performance.csv";
+
+        // PrintWriter w = new PrintWriter(new FileWriter(filename3, true), true);
+         
+        // w.println();
+        
+        // Performance per = new Performance();
+        // per.performance();
         command();
     }
+
     sc.close();
 }
 

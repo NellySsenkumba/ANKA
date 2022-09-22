@@ -12,7 +12,7 @@ public class Performance {
         String time = t.format(tm);
 
         try {
-            File myObj = new File("./ANKA/storage/performance.csv");
+            File myObj = new File("./ANKA/storage/results.csv");
             if (myObj.createNewFile()) {
                 System.out.println("File successfully created at " + time);
                 System.out.println("File created: " + myObj.getName());

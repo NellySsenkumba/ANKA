@@ -1,6 +1,3 @@
-"participant ID","participant name",points
-34,joseph,2
-33,mary,10
-32,isaac,0
-35,joe,5
-
+name,time,update
+isaac,,timestamp,0
+joe'

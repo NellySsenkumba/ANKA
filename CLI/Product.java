@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.io.File; // Import the File class
+import java.io.FileInputStream;
 import java.io.FileWriter; // Import the FileWriter class
 import java.io.IOException; // Import the IOException class to handle errors
 import java.io.BufferedReader;
@@ -70,7 +71,7 @@ public class Product {
             wr.show();
 
         } else if (choice.equalsIgnoreCase("View Performance")) {
-            BufferedReader bf = new BufferedReader(new InputStreamReader (new FileInputStream("C:/xampp/htdocs/ANKA/ANKA/storage/performance.csv")));
+            BufferedReader bf = new BufferedReader(new InputStreamReader (new FileInputStream("C:/xampp/htdocs/ANKA/ANKA/storage/results.csv")));
             
             // result = bf.readLine();
             // System.out.println(result);
