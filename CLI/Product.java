@@ -32,9 +32,9 @@ public class Product {
         String filename = "./ANKA/storage/product.csv";
         PrintWriter w = new PrintWriter(new FileWriter(filename, true), true);
 
-        LocalDateTime ts = LocalDateTime.now();
-        DateTimeFormatter ty = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = ts.format(ty);
+//         LocalDateTime ts = LocalDateTime.now();
+//         DateTimeFormatter ty = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//         String formattedDate = ts.format(ty);
 
         Product wr = new Product();
         wr.show();
@@ -43,7 +43,7 @@ public class Product {
             Scanner m = new Scanner(System.in);
 
             System.out.print("Enter Product Details in the order below \n");
-            System.out.print("Product_Name\tProduct_Quantity\tProduct_Price\tProduct_Description\ttime\tUpdated \n");
+            System.out.print("Product_Name\tProduct_Quantity\tProduct_Price\tProduct_Description\tUpdated \n");
 
             int Updated = 0;
             String pro_name = m.next();
@@ -53,12 +53,22 @@ public class Product {
             // String product = pro_name + ", " + pro_qt + ", " + pro_px + ", " + pro_desc +
             // ", " + Updated;
 
-            w.println("Post product_" + pro_name + ", " + pro_qt + ", " + pro_px + ", " + pro_desc + ", "
-                    + formattedDate + ", " + Updated);
+            w.println("Post product_" + pro_name + ", " + pro_qt + ", " + pro_px + ", " + pro_desc + ", " + Updated);
             wr.show();
 
         } else if (choice.equalsIgnoreCase("View Performance")) {
-            System.out.println("you have 0 points");
+            BufferedReader bf = new BufferedReader(new InputStreamReader (new FileInputStream("C:/xampp/htdocs/ANKA/ANKA/storage/performance.csv")));
+            
+            // result = bf.readLine();
+            // System.out.println(result);
+
+            System.out.println("You are viewing your progress");
+            System.out.println("In the Format of Participant_Id,  Participant_Name,  Points earned by the Participants\n");
+            
+            for(String result; (result = bf.readLine()) != null; ) {
+                System.out.println(result);
+            }
+            System.out.println("\n");
             wr.show();
 
         } else if (choice.equalsIgnoreCase("Edit Quantity")) {
