@@ -116,5 +116,8 @@ public class Product {
         System.out.println("Successfully wrote to the file.");
 
     }
-
+public static void main(String[] args) throws IOException {
+    Product p = new Product();
+    p.post();
+}
 }

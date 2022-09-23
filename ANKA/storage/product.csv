@@ -4,10 +4,11 @@ juice," 4"," 2.8M"," lenovo",1
 bread," 7"," 9500"," white",1
 phone," 10"," 3500000"," iphone 14",1
 plane," 2"," 20000"," new_somethin",1
-mil," 2"," 2344"," new",1
-earphones," 40"," 20000"," blast",1
-tea," 12"," 2000"," black",1
-tea," 3"," 2000"," black",1
-tea," 3"," 2000"," black",1
-cement," 24"," 20000"," hima",1
-cement," 24"," 20000"," hima",1
+mil, 2, 2344, new, 0
+earphones, 40, 20000, blast, 0
+tea, 12, 2000, black, 0
+tea, 3, 2000, black, 0
+tea, 3, 2000, black, 0
+cement, 24, 20000, hima, 0
+cement, 24, 20000, hima, 0
+Post product_icecream, 34, 9000, sweet, 0
