@@ -49,7 +49,7 @@ public class Login {
      
     if(column[0].equalsIgnoreCase(username)){
      Main ma = new Main();
-     System.out.println("your information will be available at "+ ma.response);
+     System.out.println("your information will be available at ");
      System.out.println("");
      System.out.println("THIS IS YOUR INFORMATION");
      System.out.println("----------------------------------");
@@ -72,14 +72,10 @@ public class Login {
         }  
         else{
             System.out.println("Login Failed");
+            
         }
         Main m = new Main();
-        //m.command(); 
+         
     }
     
-    
-//    public static void main(String[] args) throws FileNotFoundException, IOException {
-//     Login lg = new Login();
-//     lg.login(scan);
-//    }
 }
