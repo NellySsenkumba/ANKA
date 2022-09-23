@@ -59,15 +59,11 @@
                                         
                                         
                                         @foreach ($products as $pdt)
-                                            @if($pdt->participants_id==$pat->id)
-                                                @if($pdt->total_quantity!=0){
+                                            @if($pdt->participants_id==$pat->id && $pdt->total_quantity!=0)
+                                                
                                                     <td>{{ (($pdt->total_quantity-$pdt->left_quantity)/ $pdt->total_quantity)*100 }}%</td>
-                                                }
-                                                @else
-                                                    <td>0%</td>
-                                                @endif
-                                            
-                                            
+                                            @elseif($pdt->participants_id==$pat->id && $pdt->total_quantity==0)    
+                                                <td>0%</td>
                                             @endif
                                         @endforeach
                                         <td>{{ $pat->points }}</td>

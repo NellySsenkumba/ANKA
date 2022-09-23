@@ -13,7 +13,23 @@
                     <div class="row">
                         <div class="col-9">
                             <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">$12.34</h3>
+                                <h3 class="mb-0">
+                                    @php
+                                    $max=$products[0];
+                                    @endphp
+                                    @for ($i=0;$i<count($products);$i++)
+                                        
+                                        @if(($max->total_quantity-$max->left_quantity)<($products[$i]->total_quantity-$products[$i]->left_quantity))
+                                        @php
+                                            $max=$products[$i];
+                                        @endphp
+
+                                        @endif
+                                    @endfor
+                                    {{ $max->name }}
+                                
+                                
+                                </h3>
                                 <p class="text-success ml-2 mb-0 font-weight-medium"></p>
                             </div>
                         </div>
@@ -23,7 +39,7 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Most Bought Products</h6>
+                    <h6 class="text-muted font-weight-normal">Most Bought Product</h6>
                 </div>
             </div>
         </div>
@@ -33,7 +49,22 @@
                     <div class="row">
                         <div class="col-9">
                             <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">$17.34</h3>
+                                <h3 class="mb-0">
+                                    @php
+                                    $min=$products[0];
+                                    @endphp
+                                    @for ($i=0;$i<count($products);$i++)
+                                        
+                                        @if(($min->total_quantity-$min->left_quantity)>(($products[$i]->total_quantity)-$products[$i]->left_quantity))
+                                        @php
+                                            $min=$products[$i];
+                                        @endphp
+
+                                        @endif
+                                    @endfor
+                                    {{ $min->name }}
+
+                                </h3>
                                 <!-- <p class="text-success ml-2 mb-0 font-weight-medium"></p> -->
                             </div>
                         </div>
@@ -43,7 +74,7 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Least Bought Products</h6>
+                    <h6 class="text-muted font-weight-normal">Least Bought Product</h6>
                 </div>
             </div>
         </div>
@@ -53,7 +84,33 @@
                     <div class="row">
                         <div class="col-9">
                             <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">$12.34</h3>
+                                
+                                    @php
+                                        $sale=$products[0];
+                                    @endphp
+                                    
+                                    @foreach ($products as $pdt)
+                                            
+                                                @if($pdt->total_quantity!=0)
+                                                    @if (((($sale->left_quantity)/$sale->total_quantity))>(($pdt->left_quantity)/ $pdt->total_quantity))
+                                                    @php
+                                                    $sale=$pdt;
+                                                    @endphp
+                                                    @endif
+
+                                                
+                                                
+                                                @endif
+                                            
+                                            
+                                            
+                                        @endforeach
+                                         
+                                        <h3 class="mb-0"> {{ $sale->name }}</h3>
+                                                <h6 class="mb-0">{{ (($sale->total_quantity-$sale->left_quantity)/ $sale->total_quantity)*100 }}%</h6>
+                                                
+
+                                
                                 <!-- <p class="text-danger ml-2 mb-0 font-weight-medium">-2.4%</p> -->
                             </div>
                         </div>
@@ -63,7 +120,7 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">products sold</h6>
+                    <h6 class="text-muted font-weight-normal">Highest Persentage Sale</h6>
                 </div>
             </div>
         </div>
@@ -73,8 +130,7 @@
                     <div class="row">
                         <div class="col-9">
                             <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">$31.53</h3>
-                                <!-- <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p> -->
+                                <h3 class="mb-0">{{ count($participants) }}</h3>
                             </div>
                         </div>
                         <div class="col-3">

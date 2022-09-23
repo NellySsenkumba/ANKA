@@ -14,7 +14,9 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        return view('Admin.index');
+        $participants=Participant::all();
+        $products=Product::all();
+        return view('Admin.index',['participants'=>$participants,'products'=>$products]);
     }
 
     public function participant(){
