@@ -36,7 +36,9 @@ class CustomerController extends Controller
                     
                
         for($record=0;$record<count($product);$record++){
-            $book=Booking::where('product_id',$product[$record])
+            $points[$record]=0;
+            if($quantity[$record]!=0){
+                $book=Booking::where('product_id',$product[$record])
                 ->where('customer_id',$customer[$record])->get();
                 if(count($book)==0){
                     // echo('no record');
@@ -46,7 +48,7 @@ class CustomerController extends Controller
                     // echo('return buyer');
                     if(count($book)==1){
                         $returnproduct=Product::where('id',$product[$record])->get();
-                    $returnproduct[0]->return_buyers+=1;
+                    $returnproduct[0]->return_buyer+=1;
                     $returnproduct[0]->update();
                     }
                     
@@ -71,7 +73,10 @@ class CustomerController extends Controller
             $book->save();
 
             
-           
+          
+            }
+
+             
         }
         //save points
         for($record=0;$record<count($points);$record++){
