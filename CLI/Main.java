@@ -112,7 +112,7 @@ public  void command() throws IOException, FileNotFoundException{
                 // BufferedReader b = new BufferedReader(new InputStreamReader(System.in));
                 // String view = b.readLine();
 System.out.println("yyyyy");
-    // if(view.equalsIgnoreCase("view")){
+    if(view.equalsIgnoreCase("view")){
 
 
 //--------------------------------------------------------------------
@@ -121,17 +121,17 @@ System.out.println("yyyyy");
  BufferedReader buf = new BufferedReader(new FileReader(myFile2));
  Object[] lines = buf.lines().toArray();
  int counter = 0;
-        for(int count=0; count<lines.length;count++){
-            counter++;
+        // for(int count=0; count<lines.length;count++){
+        //     counter++;
             
-        }
- buf.close();
+        // }
+//  buf.close();
  for(int i=0; i<lines.length; i++){
      String line = lines[i].toString().trim();
      String[] column =  line.split(",");
-     Login ol = new Login();
+    //  Login ol = new Login();
      
-    if(column[0].equalsIgnoreCase(ol.username)){
+    if(column[0].equalsIgnoreCase(Login.username)){
      //Main ma = new Main();
      System.out.println("your information will be available at ");
      System.out.println("");
@@ -148,6 +148,8 @@ System.out.println("yyyyy");
      System.out.println("| products left | "+column[4]+"|");
      System.out.println("----------------------------------");
      
+    }else{
+        System.out.println("yes");
     }
  }
  
@@ -164,7 +166,7 @@ op.close();
 
 
 
-//    }
+   }
      //sc.close();
     //  b.close();      
 

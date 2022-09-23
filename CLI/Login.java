@@ -3,7 +3,7 @@ import java.io.*;
 
 
 public class Login {
-    String username;
+    static String username;
     public  void login(Scanner scan) throws FileNotFoundException,IOException{
        
        
