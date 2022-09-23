@@ -31,10 +31,7 @@ public class Login {
         if(loggedin==1){
             
             System.out.println("Successfully logged in"); 
-            System.out.println("these are your results");
-
-
-    
+           
  //---------------------------------------------------------------------
  
  File myFile2=new File("./ANKA/storage/results.csv");

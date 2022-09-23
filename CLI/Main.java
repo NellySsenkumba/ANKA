@@ -6,17 +6,17 @@ public class Main{
 public void menu(){
     System.out.println("                                                                         ");
     System.out.println("                                                                         ");
-    System.out.println("----------------------------------MENU-----------------------------------");
-    System.out.println("To register ==> Enter your details in the following order ");
-    System.out.println("| register | name | password | product | date_of_birth |");
-    System.out.println("-------------------------------------------------------------------------");
-    System.out.println("To post a product ==> Enter your details in the following order :");
-    System.out.println("| post_product | Product_Name | Quantity | Price | Description |");
-    System.out.println("-------------------------------------------------------------------------");
-    System.out.println("to view your performance type ===> Performance");
-    System.out.println("-------------------------------------------------------------------------");
-    System.out.println("Exit terminates the program");
-    System.out.println("-------------------------------------------------------------------------");
+    System.out.println("-----------------------------MENU------------------------");
+    System.out.println(">To register - Enter your details in the order below ");
+    System.out.println("(register name password product date_of_birth )");
+    System.out.println(" ");
+    System.out.println(">To post a product - Enter your details in the order below");
+    System.out.println("(post_product productname quantity price description )");
+    System.out.println(" ");
+    System.out.println(">To view your performance type - Performance");
+    System.out.println(" ");
+    System.out.println(">To terminate type - Exit");
+    System.out.println("----------------------------------------------------------");
     }
     LocalTime response=null;
        
