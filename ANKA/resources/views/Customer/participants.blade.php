@@ -22,7 +22,7 @@
                                         <th> Participant name </th>
                                         <th> Product </th>
                                         <th> Product available </th>
-                                        <th> Points </th>
+                                        {{-- <th> Points </th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,7 +49,7 @@
                                         @endforeach
                                         
                                         
-                                        <td>{{ $pat->points }}</td>
+                                        {{-- <td>{{ $pat->points }}</td> --}}
     
                                     </tr>
                                     @php

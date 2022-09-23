@@ -141,102 +141,102 @@ class Kernel extends ConsoleKernel
             })->everyMinute();
 
             //quantity left
-            $schedule->call(function (){
-                //quantity left
-                    $book=Booking::all();
-                    for($i=0;$i<count($book);$i++){
-                        $quantity=0;
-                        for($j=0;$j<count($book);$j++){
-                            if($book[$i]->product_id==$book[$j]->product_id){
-                                $quantity=$quantity+$book[$j]->quantity;
+        $schedule->call(function (){
+            //quantity left
+                $book=Booking::all();
+                for($i=0;$i<count($book);$i++){
+                    $quantity=0;
+                    for($j=0;$j<count($book);$j++){
+                        if($book[$i]->product_id==$book[$j]->product_id){
+                            $quantity=$quantity+$book[$j]->quantity;
 
-                            }
                         }
-                        
-            $prdt=Product::find(1)->where('id',$book[$i]->product_id)->get();
-            $prdt[0]->left_quantity=$prdt[0]->total_quantity-$quantity;
-            $prdt[0]->update();
-            
-
-        }
-
-        
-        
-            })->everyMinute();
-            
-
-            //performance
-            $schedule->call(function () {
-                $users=[];
-                if(($open=fopen(storage_path()."/performance.csv","r+"))!=FALSE){
-                    while(($data=fgetcsv($open))!=FALSE){
-                        $users[]=$data;
                     }
                     
-    
-                    for($i=1;$i<count($users);$i++){
-                        if ($users[$i][1]=='0'){
-                            
-                        
-                            // Write in report file
-
-
-                            
-                            if(($open1=fopen(storage_path()."/results.csv","w"))!=FALSE){
-                    
-                            $participant=Participant::where('name',$users[$i][0])->get();
-
-                            
-                        
-                            fputcsv($open1,['participant name','points','rank','return buyers','products left']);
-                        
-                        foreach ($participant as $pat) {
-                            $products=Product::where('participants_id',$pat->id)->get();
-                            
-                            
-                            fputcsv($open1,[$pat->name,$pat->points,$pat->rank,$products[0]->return_buyer,$products[0]->left_quantity]);
-                            }
-                        
-                    
-                        
-                        fclose($open1);
+        $prdt=Product::find(1)->where('id',$book[$i]->product_id)->get();
+        $prdt[0]->left_quantity=$prdt[0]->total_quantity-$quantity;
+        $prdt[0]->update();
         
+
+    }
+
+    
+    
+        })->everyMinute();
         
-                            }
-                        
-                            
-                            
 
-
-                            
-                            $users[$i][1]='1';
-                       
-    
-                        }
-                    
-    
-                    }
-                    
-                
-    
-                         fseek($open,0);
-                    
-                    
-                    
-                    
-                        foreach ($users as $row) {
-                        fputcsv($open,$row);
-                        }
-                    
-                
-                    
-                         fclose($open);
-    
-    
+        //performance
+        $schedule->call(function () {
+            $users=[];
+            if(($open=fopen(storage_path()."/performance.csv","r+"))!=FALSE){
+                while(($data=fgetcsv($open))!=FALSE){
+                    $users[]=$data;
                 }
+                
+
+                for($i=1;$i<count($users);$i++){
+                    if ($users[$i][1]=='0'){
+                        
+                    
+                        // Write in report file
+
+
+                        
+                        if(($open1=fopen(storage_path()."/results.csv","w"))!=FALSE){
+                
+                        $participant=Participant::where('name',$users[$i][0])->get();
+
+                        
+                    
+                        fputcsv($open1,['participant name','points','rank','return buyers','products left']);
+                    
+                    foreach ($participant as $pat) {
+                        $products=Product::where('participants_id',$pat->id)->get();
+                        
+                        
+                        fputcsv($open1,[$pat->name,$pat->points,$pat->rank,$products[0]->return_buyer,$products[0]->left_quantity]);
+                        }
+                    
+                
+                    
+                    fclose($open1);
     
-           
-            })->everyMinute();
+    
+                        }
+                    
+                        
+                        
+
+
+                        
+                        $users[$i][1]='1';
+                    
+
+                    }
+                
+
+                }
+                
+            
+
+                        fseek($open,0);
+                
+                
+                
+                
+                    foreach ($users as $row) {
+                    fputcsv($open,$row);
+                    }
+                
+            
+                
+                        fclose($open);
+
+
+            }
+
+        
+        })->everyMinute();
 
         
     }

@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
-            $table->integer('price')->nullable();
+            $table->integer('price')->default(0);
             $table->integer('total_quantity')->default(0);
-            $table->integer('left_quantity')->nullable();
+            $table->integer('left_quantity')->default(0);
             $table->unsignedBigInteger('participants_id');
             $table->foreign('participants_id')->references('id')->on('products');
             $table->integer('return_buyer')->default(0);

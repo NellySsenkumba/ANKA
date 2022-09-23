@@ -85,27 +85,7 @@
 
                         
 
-                        <li class="nav-item dropdown border-left">
-                            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
-                                data-toggle="dropdown">
-                                <i class="mdi mdi-cart"></i>
-                                <span class="count bg-danger"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-                                aria-labelledby="notificationDropdown">
-                                
-                                <a class="dropdown-item preview-item">
-                                    <div class="preview-thumbnail">
-                                        
-
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item preview-item">
-                                            
-                                        </a>
-                                        <div class="dropdown-divider"></div>
-                                        <p class="p-3 mb-0 text-center">See all notifications</p>
-                                    </div>
-                        </li>
+                        
                         <li class="nav-item dropdown">
                             <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                                 <div class="navbar-profile">
@@ -134,6 +114,7 @@
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
+                                    test
                                 </form>
                                 
                             </div>
