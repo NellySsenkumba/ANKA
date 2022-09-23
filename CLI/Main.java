@@ -18,7 +18,8 @@ public void menu(){
     System.out.println("Exit terminates the program");
     System.out.println("-------------------------------------------------------------------------");
     }
-
+    LocalTime response=null;
+       
 public  void command() throws IOException, FileNotFoundException{
         menu();   
         try (Scanner sc = new Scanner(System.in)) {
@@ -80,14 +81,14 @@ public  void command() throws IOException, FileNotFoundException{
                 String lines = line[i].toString().trim();
                 String[] column =  lines.split(",");
                 
-                if(pro_name.equals(column[0])){
-                    exist = 1; 
-                    System.out.println("product already posted");
-                    command();
-                }
+            //     if(pro_name.equals(column[0])){
+            //         exist = 1; 
+            //         System.out.println("product already posted");
+            //         command();
+            //     }
                
-            }
-            if(exist==0){
+            // }
+            // if(exist==0){
 
             PrintWriter w = new PrintWriter(new FileWriter(filename2, true), true);
             w.println(pro_name + ", " + pro_qt + ", " + pro_px + ", " + pro_desc + ", " + Updated);
@@ -109,7 +110,7 @@ public  void command() throws IOException, FileNotFoundException{
             System.out.println("please login first");
             Login n = new Login();
             n.login(so);
-            LocalTime response = request.plusMinutes(1);
+            response = request.plusMinutes(1);
 
 
 File time =new File("./ANKA/storage/time.csv");

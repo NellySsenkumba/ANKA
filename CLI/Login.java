@@ -51,8 +51,10 @@ public class Login {
      String[] column =  line.split(",");
      
     if(column[0].equalsIgnoreCase(username)){
-    System.out.println("your results will be returned at....");
-
+     Main ma = new Main();
+     System.out.println("your information will be available at "+ ma.response);
+     System.out.println("");
+     System.out.println("THIS IS YOUR INFORMATION");
      System.out.println("----------------------------------");
      System.out.println("| name          | "+column[0]+"            |");
      System.out.println("----------------------------------");
