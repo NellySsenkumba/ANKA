@@ -16,9 +16,16 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Nelly',
+            'email' => 'nelly@gmail.com',
+            'password'=>hash('',"12345678")
+        ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Nelson Ssenkumba',
+            'email' => 'ssenkumbanelson.sn@gmail.com',
+            'password'=>hash("","12345678"),
+            'role'=>'1'
+        ]);
     }
 }

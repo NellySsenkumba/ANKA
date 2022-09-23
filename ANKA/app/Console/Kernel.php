@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Models\Participant;
 use App\Models\Product;
+use App\Models\Booking;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -106,7 +107,8 @@ class Kernel extends ConsoleKernel
                             Product::where('name',$users[$i][0])
                                 ->update(['description'=>$users[$i][3],
                                         'price'=>(int)$users[$i][2],
-                                        'total_quantity'=>(int)$users[$i][1]+$initial_quantity
+                                        'total_quantity'=>(int)$users[$i][1]+$initial_quantity,
+                                        'left_quantity'=>(int)$users[$i][1]+$initial_quantity
                                     ]);
 
                             
@@ -138,6 +140,29 @@ class Kernel extends ConsoleKernel
            
             })->everyMinute();
 
+            //quantity left
+            $schedule->call(function (){
+                //quantity left
+                    $book=Booking::all();
+                    for($i=0;$i<count($book);$i++){
+                        $quantity=0;
+                        for($j=0;$j<count($book);$j++){
+                            if($book[$i]->product_id==$book[$j]->product_id){
+                                $quantity=$quantity+$book[$j]->quantity;
+
+                            }
+                        }
+                        
+            $prdt=Product::find(1)->where('id',$book[$i]->product_id)->get();
+            $prdt[0]->left_quantity=$prdt[0]->total_quantity-$quantity;
+            $prdt[0]->update();
+            
+
+        }
+
+        
+        
+            })->everyMinute();
             
 
             //performance
@@ -160,12 +185,16 @@ class Kernel extends ConsoleKernel
                             if(($open1=fopen(storage_path()."/results.csv","w"))!=FALSE){
                     
                             $participant=Participant::where('name',$users[$i][0])->get();
-                        
+
+                            
                         
                             fputcsv($open1,['participant name','points','rank','return buyers','products left']);
                         
                         foreach ($participant as $pat) {
-                            fputcsv($open1,[$pat->name,$pat->points,$pat->rank,'return buyers','products left']);
+                            $products=Product::where('participants_id',$pat->id)->get();
+                            
+                            
+                            fputcsv($open1,[$pat->name,$pat->points,$pat->rank,$products[0]->return_buyer,$products[0]->left_quantity]);
                             }
                         
                     

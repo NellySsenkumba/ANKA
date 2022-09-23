@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->date('DOB');
             $table->integer('points')->default(0);
-            $table->integer('rank')->nullable();
+            $table->integer('rank')->default(0);
             $table->timestamps();
         });
     }

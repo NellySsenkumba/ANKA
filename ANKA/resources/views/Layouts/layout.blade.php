@@ -80,20 +80,10 @@
                         data-toggle="minimize">
                         <span class="mdi mdi-menu"></span>
                     </button>
-                    <ul class="navbar-nav w-100">
-                        <li class="nav-item w-100">
-                            <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                                <input type="text" class="form-control" placeholder="Search products">
-                            </form>
-                        </li>
-                    </ul>
+                    
                     <ul class="navbar-nav navbar-nav-right">
 
-                        <li class="nav-item nav-settings d-none d-lg-block">
-                            <a class="nav-link" href="#">
-                                <i class="mdi mdi-view-grid"></i>
-                            </a>
-                        </li>
+                        
 
                         <li class="nav-item dropdown border-left">
                             <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
@@ -103,30 +93,14 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                                 aria-labelledby="notificationDropdown">
-                                <!-- <h6 class="p-3 mb-0">Notifications</h6>
-                  <div class="dropdown-divider"></div> -->
+                                
                                 <a class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
-                                        <!-- <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-calendar text-success"></i>
-                      </div>
-                    </div> -->
-                                        <!-- <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Event today</p>
-                      <p class="text-muted ellipsis mb-0"> Just a reminder that you have an event today </p>
-                    </div> -->
+                                        
 
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item preview-item">
-                                            <!-- <div class="preview-thumbnail"> -->
-                                            <!-- <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-link-variant text-warning"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Launch Admin</p>
-                      <p class="text-muted ellipsis mb-0"> New admin wow! </p>
-                    </div> -->
+                                            
                                         </a>
                                         <div class="dropdown-divider"></div>
                                         <p class="p-3 mb-0 text-center">See all notifications</p>
@@ -143,17 +117,8 @@
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                                 aria-labelledby="profileDropdown">
                                 <h6 class="p-3 mb-0">Profile</h6>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
-                                    <div class="preview-thumbnail">
-                                        <div class="preview-icon bg-dark rounded-circle">
-                                            <i class="mdi mdi-settings text-success"></i>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item-content">
-                                        <p class="preview-subject mb-1">Settings</p>
-                                    </div>
-                                </a>
+                                
+                                
                                 <div class="dropdown-divider"></div>
                                 
                                 <a class="dropdown-item preview-item" href="{{ route('logout') }}" onclick="event.preventDefault();

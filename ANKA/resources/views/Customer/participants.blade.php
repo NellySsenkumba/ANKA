@@ -18,7 +18,7 @@
                             <table class="table table-dark">
                                 <thead>
                                     <tr>
-                                        <th> # </th>
+                                        <th>  </th>
                                         <th> Participant name </th>
                                         <th> Product </th>
                                         <th> Product available </th>
@@ -26,15 +26,35 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                     @php
+                                         $i=1;
+                                     @endphp
+                                       
                                     @foreach ($participants as $pat)
                                     <tr>
+                                        <td>{{ $i }}</td>
                                         <td>{{ $pat->name }}</td>
-                                        <td>{{ $pat->name }}</td>
-                                        <td>{{ $pat->name }}</td>
-                                        <td>{{ $pat->name }}</td>
+                                        @foreach ($products as $pdt)
+                                            @if($pdt->participants_id==$pat->id)
+                                            <td>{{ $pdt->name }}</td>
+                                            
+                                            @endif
+                                        @endforeach
+
+                                        @foreach ($products as $pdt)
+                                            @if($pdt->participants_id==$pat->id)
+                                            <td>{{ $pdt->left_quantity }}</td>
+                                            
+                                            @endif
+                                        @endforeach
+                                        
+                                        
                                         <td>{{ $pat->points }}</td>
     
                                     </tr>
+                                    @php
+                                    $i++;
+                                @endphp
                                     @endforeach
                                     
                                     
