@@ -115,7 +115,7 @@ public  void command() throws IOException, FileNotFoundException{
 
 File time =new File("./ANKA/storage/time.csv");
 PrintWriter op = new PrintWriter(new FileWriter(time, true), true);
-op.println(n.username+","+request+","+seen+","+response);
+op.println(n.username+","+request+","+seen+","+response+","+0);
 op.close();
 
 
