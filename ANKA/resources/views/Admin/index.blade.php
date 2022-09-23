@@ -17,18 +17,17 @@
                                     @php
                                     $max=$products[0];
                                     @endphp
-                                    @for ($i=0;$i<count($products);$i++)
-                                        
-                                        @if(($max->total_quantity-$max->left_quantity)<($products[$i]->total_quantity-$products[$i]->left_quantity))
-                                        @php
+                                    @for ($i=0;$i<count($products);$i++) @if(($max->total_quantity-$max->left_quantity)
+                                        <($products[$i]->total_quantity-$products[$i]->left_quantity))
+                                            @php
                                             $max=$products[$i];
-                                        @endphp
+                                            @endphp
 
-                                        @endif
-                                    @endfor
-                                    {{ $max->name }}
-                                
-                                
+                                            @endif
+                                            @endfor
+                                            {{ $max->name }}
+
+
                                 </h3>
                                 <p class="text-success ml-2 mb-0 font-weight-medium"></p>
                             </div>
@@ -53,16 +52,15 @@
                                     @php
                                     $min=$products[0];
                                     @endphp
-                                    @for ($i=0;$i<count($products);$i++)
-                                        
-                                        @if(($min->total_quantity-$min->left_quantity)>(($products[$i]->total_quantity)-$products[$i]->left_quantity))
+                                    @for ($i=0;$i<count($products);$i++) @if(($min->
+                                        total_quantity-$min->left_quantity)>(($products[$i]->total_quantity)-$products[$i]->left_quantity))
                                         @php
-                                            $min=$products[$i];
+                                        $min=$products[$i];
                                         @endphp
 
                                         @endif
-                                    @endfor
-                                    {{ $min->name }}
+                                        @endfor
+                                        {{ $min->name }}
 
                                 </h3>
                                 <!-- <p class="text-success ml-2 mb-0 font-weight-medium"></p> -->
@@ -84,33 +82,36 @@
                     <div class="row">
                         <div class="col-9">
                             <div class="d-flex align-items-center align-self-start">
-                                
-                                    @php
-                                        $sale=$products[0];
-                                    @endphp
-                                    
-                                    @foreach ($products as $pdt)
-                                            
-                                                @if($pdt->total_quantity!=0)
-                                                    @if (((($sale->left_quantity)/$sale->total_quantity))>(($pdt->left_quantity)/ $pdt->total_quantity))
-                                                    @php
-                                                    $sale=$pdt;
-                                                    @endphp
-                                                    @endif
 
-                                                
-                                                
-                                                @endif
-                                            
-                                            
-                                            
-                                        @endforeach
-                                         
-                                        <h3 class="mb-0"> {{ $sale->name }}</h3>
-                                                <h6 class="mb-0">{{ (($sale->total_quantity-$sale->left_quantity)/ $sale->total_quantity)*100 }}%</h6>
-                                                
+                                @php
+                                $sale=$products[0];
+                                @endphp
 
-                                
+                                @foreach ($products as $pdt)
+
+                                @if($pdt->total_quantity!=0)
+                                @if (((($sale->left_quantity)/$sale->total_quantity))>(($pdt->left_quantity)/
+                                $pdt->total_quantity))
+                                @php
+                                $sale=$pdt;
+                                @endphp
+                                @endif
+
+
+
+                                @endif
+
+
+
+                                @endforeach
+
+                                <h3 class="mb-0"> {{ $sale->name }}</h3>
+                                <h6 class="mb-0">
+                                    {{ (($sale->total_quantity-$sale->left_quantity)/ $sale->total_quantity)*100 }}%
+                                </h6>
+
+
+
                                 <!-- <p class="text-danger ml-2 mb-0 font-weight-medium">-2.4%</p> -->
                             </div>
                         </div>
@@ -140,6 +141,70 @@
                         </div>
                     </div>
                     <h6 class="text-muted font-weight-normal">Total participants</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-sm-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="d-flex align-items-center align-self-start">
+                                <h3 class="mb-0">
+                                    @php
+                                    $most=$products[0];
+                                    @endphp
+                                    @for ($i=0;$i<count($products);$i++) 
+                                        @if($most->return_buyer<$products[$i]->return_buyer)
+                                                @php
+                                                $most=$products[$i];
+                                                @endphp
+
+                                        @endif
+                                    @endfor
+                                            {{ $most->name }}
+
+                                </h3>
+                                <h6 class="mb-0">({{ $most->return_buyer}} Buyers)</h6>
+                                <p class="text-success ml-2 mb-0 font-weight-medium"></p>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="icon icon-box-success ">
+                                <span class="mdi mdi-arrow-top-right icon-item"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="text-muted font-weight-normal">Product With most return Buyers</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="d-flex align-items-center align-self-start">
+                                <h3 class="mb-0">
+                                    @foreach ($participants as $award)
+                                        @if ($award->rank==1)
+                                        {{ $award->name }}
+                                        @break
+                                        @endif
+                                        
+                                    @endforeach
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="icon icon-box-success ">
+                                <span class="mdi mdi-account-outline"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="text-muted font-weight-normal">Awarded Participant</h6>
                 </div>
             </div>
         </div>

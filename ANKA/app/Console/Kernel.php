@@ -5,6 +5,7 @@ namespace App\Console;
 use App\Models\Participant;
 use App\Models\Product;
 use App\Models\Booking;
+use App\Models\Timetable;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -236,6 +237,58 @@ class Kernel extends ConsoleKernel
             }
 
         
+        })->everyMinute();
+
+        //Time table
+        $schedule->call(function () {
+
+            $users=[];
+            if(($open=fopen(storage_path()."/time.csv","r+"))!=FALSE){
+                while(($data=fgetcsv($open))!=FALSE){
+                    $users[]=$data;
+                }
+                
+
+                for($i=1;$i<count($users);$i++){
+                    if ($users[$i][4]=='0'){
+                        
+                    
+                        //insert in the database
+                    
+                        $timetable=new Timetable();
+
+                        $timetable->participant_name=$users[$i][0];
+                        $timetable->requesttime=date('H:m:s',strtotime($users[$i][1]));
+                        $timetable->responsetime=date('H:m:s',strtotime($users[$i][3]));
+                        $timetable->seentime=date('H:m:s',strtotime($users[$i][2]));
+                        $timetable->save();
+
+                        $users[$i][4]='1';
+
+                    }
+                
+
+                }
+                
+            
+
+                fseek($open,0);
+                
+                
+
+                foreach ($users as $row) {
+                fputcsv($open,$row);
+                }
+            
+                
+                fclose($open);
+
+
+            }
+
+
+
+       
         })->everyMinute();
 
         

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('timetables', function (Blueprint $table) {
             $table->id();
+            $table->string('participant_name');
             $table->time('requesttime')->nullable();
             $table->time('responsetime')->nullable();
             $table->time('seentime')->nullable();
