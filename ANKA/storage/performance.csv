@@ -1,2 +1,7 @@
 name,update
 joe,1
+<<<<<<< Updated upstream
+=======
+
+isaac,0
+>>>>>>> Stashed changes

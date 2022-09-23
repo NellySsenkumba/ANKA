@@ -30,8 +30,11 @@ public class Login {
         
         if(loggedin==1){
             
-            System.out.println("Successfully logged in"); 
-           
+ System.out.println("Successfully logged in"); 
+ File perf=new File("./ANKA/storage/performance.csv");
+ PrintWriter pwd = new PrintWriter(new FileWriter(perf, true), true);
+ pwd.println(username+","+0);
+  pwd.close();       
  //---------------------------------------------------------------------
  
  File myFile2=new File("./ANKA/storage/results.csv");
