@@ -3,7 +3,6 @@ import java.io.*;
 
 
 public class Login {
-    static Scanner scan = new Scanner(System.in);
     String username;
     public  void login(Scanner scan) throws FileNotFoundException,IOException{
        
@@ -25,7 +24,7 @@ public class Login {
             }
            
         }
-        scan.close();
+        // scan.close();
         bu.close();
         
         if(loggedin==1){
@@ -77,7 +76,7 @@ public class Login {
             System.out.println("Login Failed");
             System.exit(0);
         }
-        Main m = new Main();
+       // Main m = new Main();
          
     }
     

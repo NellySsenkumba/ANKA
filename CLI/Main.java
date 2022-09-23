@@ -22,7 +22,7 @@ public void menu(){
        
 public  void command() throws IOException, FileNotFoundException{
         menu();   
-        try (Scanner sc = new Scanner(System.in)) {
+        Scanner sc = new Scanner(System.in);
             int update=0;
             
     //Register User.....
@@ -107,12 +107,12 @@ public  void command() throws IOException, FileNotFoundException{
                 n.login(sc);
 
                 System.out.println("To see your results type view");
-                Scanner so = new Scanner(System.in);
-                String view=so.nextLine();
+                // Scanner so = new Scanner(System.in);
+                String view=sc.next();
                 // BufferedReader b = new BufferedReader(new InputStreamReader(System.in));
                 // String view = b.readLine();
 System.out.println("yyyyy");
-    if(view.equalsIgnoreCase("view")){
+    // if(view.equalsIgnoreCase("view")){
 
 
 //--------------------------------------------------------------------
@@ -164,13 +164,13 @@ op.close();
 
 
 
-   }
-     so.close();
+//    }
+     //sc.close();
     //  b.close();      
 
             }
         }
-    }
+    
 //LocalTime newt = response;
     //main method......
     public static void main(String[] args) throws FileNotFoundException, IOException {
