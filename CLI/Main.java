@@ -107,11 +107,11 @@ public  void command() throws IOException, FileNotFoundException{
                 n.login(sc);
 
                 System.out.println("To see your results type view");
-                // Scanner so = new Scanner(System.in);
-                // String view=so.nextLine();
-                BufferedReader b = new BufferedReader(new InputStreamReader(System.in));
-                String view = b.readLine();
-
+                Scanner so = new Scanner(System.in);
+                String view=so.nextLine();
+                // BufferedReader b = new BufferedReader(new InputStreamReader(System.in));
+                // String view = b.readLine();
+System.out.println("yyyyy");
     if(view.equalsIgnoreCase("view")){
 
 
@@ -165,8 +165,8 @@ op.close();
 
 
    }
-     // so.close();
-     //b.close();      
+     so.close();
+    //  b.close();      
 
             }
         }
