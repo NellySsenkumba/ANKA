@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Results",
+            "request": "launch",
+            "mainClass": "Results",
+            "projectName": "ANKA_b4325ac7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Try",
+            "request": "launch",
+            "mainClass": "Try",
+            "projectName": "ANKA_b4325ac7"
+        },
+        {
+            "type": "java",
+            "name": "Launch time",
+            "request": "launch",
+            "mainClass": "time",
+            "projectName": "ANKA_b4325ac7"
+        },
+        {
+            "type": "java",
             "name": "Launch Registration",
             "request": "launch",
             "mainClass": "Registration",
