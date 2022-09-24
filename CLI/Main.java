@@ -37,27 +37,40 @@ public  void command() throws IOException, FileNotFoundException{
             File myFile=new File("./ANKA/storage/registration.csv");
             BufferedReader br = new BufferedReader(new FileReader(myFile));
             Object[] lines = br.lines().toArray();
-            br.close();
+            // name.equals(column[0])||
             int exist = 0;
             for(int i=0; i<lines.length; i++){
                 String line = lines[i].toString().trim();
                 String[] column =  line.split(",");
-                
-                if(name.equals(column[0])&&product.equals(column[2])){
-                    exist = 1; 
+                if((product.equals(column[2]))){
+                    exist=1;
                     System.out.println("user already exists try another name");
+                    System.out.println("");
+
+
                     command();
-                }
-               
+                    // if(name.equals(column[0])||product.equals(column[2]))
+              }  
+                // else{
+                //     // exist = 0;         
+                //     PrintWriter p  = new PrintWriter(new FileWriter(myFile,true),true);
+                //     p.println(name+","+password+","+product+","+date_of_birth+","+update);
+                //     p.close(); 
+                //     System.out.println("successfully registered!!");
+                //     command();
+        
+                // }
             }
             if(exist==0){
 
             PrintWriter p  = new PrintWriter(new FileWriter(myFile,true),true);
             p.println(name+","+password+","+product+","+date_of_birth+","+update);
             p.close(); 
+            System.out.println("successfully registered!!");
             command();
 
       }  
+    br.close(); 
             
    }
    
@@ -71,7 +84,7 @@ public  void command() throws IOException, FileNotFoundException{
             String pro_desc = sc.next();
 
             
-            String filename2 = "./ANKA/storage/product.csv";
+            // String filename2 = "./ANKA/storage/product.csv";
 
             File myFile=new File("./ANKA/storage/registration.csv");
             BufferedReader br = new BufferedReader(new FileReader(myFile));
@@ -81,22 +94,31 @@ public  void command() throws IOException, FileNotFoundException{
             for(int i=0; i<line.length; i++){
                 String lines = line[i].toString().trim();
                 String[] column =  lines.split(",");
+                if(exist==1){
+                    String filename2 = "./ANKA/storage/product.csv";
                 
-                if(!pro_name.equals(column[2])){
+                PrintWriter w = new PrintWriter(new FileWriter(filename2, true), true);
+                w.println(pro_name + ", " + pro_qt + ", " + pro_px + ", " + pro_desc + ", " + Updated);
+                
+                w.close();
+                command();
+               }
+                else if(!pro_name.equals(column[2])){
                     exist = 0; 
                     System.out.println("product cant be posted since its not registered");
                     command();
                 }
                
             }
-            if(exist==1){
-
-            PrintWriter w = new PrintWriter(new FileWriter(filename2, true), true);
-            w.println(pro_name + ", " + pro_qt + ", " + pro_px + ", " + pro_desc + ", " + Updated);
+        //     if(exist==1){
+        //         String filename2 = "./ANKA/storage/product.csv";
             
-            w.close();
-            command();
-           }
+        //     PrintWriter w = new PrintWriter(new FileWriter(filename2, true), true);
+        //     w.println(pro_name + ", " + pro_qt + ", " + pro_px + ", " + pro_desc + ", " + Updated);
+            
+        //     w.close();
+        //     command();
+        //    }
    }
    
 
