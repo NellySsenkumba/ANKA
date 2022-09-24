@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Award",
+            "request": "launch",
+            "mainClass": "Award",
+            "projectName": "ANKA_b4325ac7"
+        },
+        {
+            "type": "java",
             "name": "Launch Product",
             "request": "launch",
             "mainClass": "Product",

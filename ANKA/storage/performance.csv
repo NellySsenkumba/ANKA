@@ -1,5 +1,6 @@
 name,update
 joe,1
+<<<<<<< Updated upstream
 isaac,1
 joe,1
 joe,1
@@ -18,3 +19,46 @@ joe,1
 joe,1
 joe,1
 joe,1
+=======
+<<<<<<< Updated upstream
+=======
+isaac,1isaac,0
+isaac,0
+isaac,0
+isaac,0
+isaac,0
+isaac,0
+>>>>>>> Stashed changes
+isaac,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+joe,0
+>>>>>>> Stashed changes
